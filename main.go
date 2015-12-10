@@ -72,7 +72,6 @@ func main() {
 	})
 
 	http.HandleFunc("/from2", func(w http.ResponseWriter, req *http.Request) {
-		fmt.Fprintf(w, "From2 of app1\n")
 
 		app2 := GetEndpoint("maxapp2")
 		resp, err := Route(app2)
@@ -80,7 +79,7 @@ func main() {
 			fmt.Fprintf(w, "error: %s\n", err.Error())
 		}
 
-		fmt.Fprintf(w, "%s\n", resp)
+		fmt.Fprintf(w, "From2 of app1\n %s\n", resp)
 	})
 
 	println("ready")
