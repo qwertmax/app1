@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/app1", func(w http.ResponseWriter, req *http.Request) {
+	http.HandleFunc("/", func(w http.ResponseWriter, req *http.Request) {
 		addrs, _ := net.InterfaceAddrs()
 		for i, addr := range addrs {
 			fmt.Fprintf(w, "%d %v\n", i, addr)

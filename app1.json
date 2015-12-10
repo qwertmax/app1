@@ -1,5 +1,5 @@
 {
-    "id": "/app1",
+    "id": "/maxapp1",
     "instances": 1,
     "container": {
         "type": "DOCKER",
