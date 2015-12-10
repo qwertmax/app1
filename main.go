@@ -63,6 +63,8 @@ func Route(apps []App) ([]byte, error) {
 
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, req *http.Request) {
+		fmt.Fprintf(w, "Main of app1\n")
+
 		addrs, _ := net.InterfaceAddrs()
 		for i, addr := range addrs {
 			fmt.Fprintf(w, "%d %v\n", i, addr)
@@ -70,6 +72,8 @@ func main() {
 	})
 
 	http.HandleFunc("/from2", func(w http.ResponseWriter, req *http.Request) {
+		fmt.Fprintf(w, "From2 of app1\n")
+
 		app2 := GetEndpoint("maxapp2")
 		resp, err := Route(app2)
 		if err != nil {
