@@ -1,6 +1,6 @@
 {
     "id": "/maxapp1",
-    "instances": 1,
+    "instances": 3,
     "container": {
         "type": "DOCKER",
         "docker": {
@@ -26,5 +26,5 @@
     }],
     "ports": [9091],
     "cpus": 0.5,
-    "mem": 256.0
+    "mem": 64.0
 }
